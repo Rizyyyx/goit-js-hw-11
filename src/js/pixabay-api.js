@@ -3,25 +3,20 @@ import Axios from "axios";
 const axios = Axios.create({
     baseURL: 'https://pixabay.com/api/',
     params: {
-        key: '47880472-62fa9ffb43bc7b1a2eb88d0d3',
+        key: '51736098-e561806c369733f177830f298',
         image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
-        
     },
 });
 
-
-export function getImagesByQuery(query) {
-    return axios
-        .get('', {
-            params: {
-                q: query,
-            }
-        })
-        .then(response => response.data)
+export async function getImagesByQuery(query, page, per_page = 15) {
+    const response = await axios.get('', {
+        params: {
+            q: query,
+            page: page,
+            per_page: per_page,
+        }
+    });
+    return response.data;
 }
-
-
-
-
