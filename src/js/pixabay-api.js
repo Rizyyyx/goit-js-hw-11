@@ -3,10 +3,11 @@ import Axios from "axios";
 const axios = Axios.create({
     baseURL: 'https://pixabay.com/api/',
     params: {
-        key: '51836290-201bf47032d0cc7a32d21d0be',
+        key: '47880472-62fa9ffb43bc7b1a2eb88d0d3',
         image_type: 'photo',
         orientation: 'horizontal',
         safesearch: true,
+        
     },
 });
 
@@ -20,3 +21,7 @@ export function getImagesByQuery(query) {
         })
         .then(response => response.data)
 }
+
+
+
+
